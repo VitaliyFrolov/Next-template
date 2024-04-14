@@ -1,7 +1,7 @@
 export default function MainPage() {
-    return (
-        <section>
-            Hello App!
-        </section>
-    )
+  return (
+    <section>
+      <h1>Hellp App!</h1>
+    </section>
+  )
 }
