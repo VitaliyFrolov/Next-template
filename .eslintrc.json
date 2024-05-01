@@ -1,3 +1,29 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next",
+
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-alert": "warn",
+    "no-console": "warn",
+    "no-var": "error",
+    "no-multi-spaces": "error",
+    "no-multiple-empty-lines": [ "error", { "max": 1} ],
+    "max-len": [ "warn", { "ignoreComments": true, "code": 100 } ],
+    "max-lines": [ "warn", { "max": 250 } ]
+  },
+
+  "overrides": [
+    {
+      "files": ["*.svg"],
+      "rules": {
+        "max-len": "off"
+      }
+    }
+  ]   
 }
