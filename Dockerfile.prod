@@ -1,0 +1,10 @@
+# Build environment
+FROM node:19-alpine as build
+WORKDIR /app
+ENV PATH /app/node_modules/.bin:$PATH
+COPY ./package*.json .
+RUN yarn install --silent
+ARG API_DOMAIN
+ENV NEXT_PUBLIC_BASE_URL=${API_DOMAIN}
+COPY . ./
+CMD ["yarn", "run", "start"]
